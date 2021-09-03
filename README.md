@@ -1,45 +1,14 @@
-
-# Start   
-
-https://github.com/dappuniversity/web3_examples
-
-https://sotoedu.herokuapp.com/
+# html_security
+html_security
 
 
-##  getBalance 
-    let getbalance = await web3.eth.getBalance(fromaddress);
-    let balance = web3.utils.fromWei(getbalance, "ether")
+온라인 해시 함수
+변환 문자열이 제공하는 해시 알고리즘은 일반적인 암호화 해시 함수입니다. 암호화 해쉬 함수는 데이터에 대한 우발적이거나 의도적 인 변경이 해시 값을 바꿀되도록, (암호화) 된 해시 값을 임의의 데이터 블록을 취하고 고정 길이의 비트 열을 반환 편도 변환 절차이다. 데이터는 "메시지"라고 종종 부호화하고 상기 해시 값은 메시지 다이제스트하거나 다이제스트라고도합니다. 쉽게 임의의 문자열 데이터로부터 해시 값을 계산하기 위해 아래의 툴을 사용한다.
 
-    if (DEBUG) console.log("balance : ", balance + " ETH");
-    $('#message').text(" balance: " + balance + " ETH");
-
-## send transaction
-
-    const privateKey = Buffer.from(myPrivateKey, 'hex');
-    if (DEBUG) console.log("privateKey: ", privateKey);
-
-    web3.eth.getTransactionCount(fromaddress, (err, txCount) => {
-    // Build the transaction
-    const txObject = {
-	nonce: web3.utils.toHex(txCount),
-	to: toaddress,
-	value: web3.utils.toHex(web3.utils.toWei(amount, 'ether')),
-	gasLimit: web3.utils.toHex(21000),
-	gasPrice: web3.utils.toHex(web3.utils.toWei('10', 'gwei'))
-     }
-
-     // Sign the transaction
-     const tx = new ethereumjs.Tx(txObject);
-     tx.sign(privateKey);
-
-     const serializedTx = tx.serialize()
-     const raw = '0x' + serializedTx.toString('hex')
-
-     // Broadcast the transaction
-     web3.eth.sendSignedTransaction(raw, (err, txHash) => {
-	console.log('txHash:', txHash)
-	  // Now go check etherscan to see the transaction!
-	  })
-    })  // end of txbuilder
-
-    
+해쉬 / 메시지 다이제스트 알고리즘
+MD5 해시
+SHA1 해시
+SHA256 해시  https://www.convertstring.com/ko/Hash/SHA256
+SHA3​​84 해시
+SHA512 해시  https://www.convertstring.com/ko/Hash/SHA512
+RIPE MD160 해시
